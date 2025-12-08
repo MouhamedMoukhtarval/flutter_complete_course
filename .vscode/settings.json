@@ -1,4 +1,9 @@
 {
     "java.configuration.updateBuildConfiguration": "disabled",
-    "cmake.sourceDirectory": "C:/Users/moukh/Documents/app_serving_doctors/windows/flutter"
+    "files.exclude": {
+        "**/windows/flutter": true
+    },
+    "search.exclude": {
+        "**/windows/flutter": true
+    }
 }
