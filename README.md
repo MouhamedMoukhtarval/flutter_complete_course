@@ -1,7 +1,7 @@
 # app_serving_doctors
 
 A new Flutter project.
-.lib:
+# 🎨 - system design:
   -core:
     -Dependency injection : (git_it)
     -Networking : (dio,retrofit)
