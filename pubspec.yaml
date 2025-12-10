@@ -36,6 +36,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   intl: ^0.20.2
   easy_localization: ^3.0.8
+  # Vector Image
+  flutter_svg: ^2.0.18
+  # for adapting the app to different screen sizes & font sizes
+  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:
