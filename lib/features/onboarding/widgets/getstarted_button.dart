@@ -27,7 +27,7 @@ class GetStartedButton extends StatelessWidget {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         ),
       ),
-      child: Text('Get Started', style: AppStyles.fontWhiteSemiBold),
+      child: Text('Get Started', style: AppStyles.font16WhiteMedium),
     );
   }
 }
