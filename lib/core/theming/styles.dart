@@ -63,6 +63,12 @@ class AppStyles {
   static TextStyle font13DarkBlueMedium = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.medium,
-    color: ColorsManager.darkBlue,
+    color: const Color.fromARGB(255, 23, 35, 123),
+  );
+
+  static TextStyle font13LighteGrayRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.lighteGray,
   );  
 }

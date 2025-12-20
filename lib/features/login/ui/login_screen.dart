@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
+          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 30.h),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 spacingVertical(8),
                 Text(
                   "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
-                  style: AppStyles.font13GrayRegular,
+                  style: AppStyles.font14LighteGrayRegular,
                 ),
                 spacingVertical(36),
                 Form(
