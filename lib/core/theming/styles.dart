@@ -70,5 +70,17 @@ class AppStyles {
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.lighteGray,
-  );  
+  );
+
+  static TextStyle font15DarkBlueMedium = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: const Color(0xFF03051B),
+  );
+
+  static TextStyle font14BlueSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.mainBlue
+  );
 }
