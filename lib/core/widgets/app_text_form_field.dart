@@ -12,6 +12,8 @@ class AppTextFormField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
   final bool? isObscureText;
+  final TextEditingController? controller;
+  final Function(String?) validator;
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -22,12 +24,15 @@ class AppTextFormField extends StatelessWidget {
     required this.hintText,
     this.suffixIcon,
     this.isObscureText,
-    this.fieldBgColor
-    });
+    this.fieldBgColor,
+    this.controller,
+    required this.validator,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
         isDense: true,
         contentPadding:contentPadding ?? EdgeInsets.symmetric(
@@ -39,14 +44,28 @@ class AppTextFormField extends StatelessWidget {
             color: ColorsManager.mainBlue,
             width: 1.4
           ),
-          borderRadius: BorderRadius.circular(16)
+          borderRadius: BorderRadius.circular(16.0)
         ),
-        enabledBorder: enabledBorder ??OutlineInputBorder(
+        enabledBorder: enabledBorder ?? OutlineInputBorder(
           borderSide: BorderSide(
             color: ColorsManager.lighterGray,
             width: 1.4
           ),
-          borderRadius: BorderRadius.circular(16)
+          borderRadius: BorderRadius.circular(16.0)
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: ColorsManager.red,
+            width: 1.4
+          ),
+          borderRadius: BorderRadius.circular(16.0)
+        ),
+         focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: ColorsManager.red,
+            width: 1.4
+          ),
+          borderRadius: BorderRadius.circular(16.0)
         ),
         fillColor: fieldBgColor ?? ColorsManager.whiteSmoke,
         filled: true,
@@ -56,6 +75,7 @@ class AppTextFormField extends StatelessWidget {
       ),
       obscureText: isObscureText ?? false,
       style: AppStyles.font14DarkBlueMedium,
+      validator: (value) => validator(value),
     );
   }
 }
