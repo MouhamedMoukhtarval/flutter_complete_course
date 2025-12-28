@@ -24,5 +24,7 @@ class AppRegex {
   static bool hasSpecialChar(String password) {
     return RegExp(r'^(?=.*[@$!%*?&])').hasMatch(password);
   }
-
-}
+  static bool isPhoneNumberValid(String phoneNumber) {
+    return RegExp(r'^\d{10}$').hasMatch(phoneNumber);
+  }
+}  

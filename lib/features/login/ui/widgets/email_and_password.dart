@@ -27,10 +27,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
     super.initState();
     // emailController = TextEditingController();
     passwordController = context.read<LoginCubit>().passwordController;
-    setupPasswordCobtrollerListener();
+    setupPasswordControllerListener();
   }
 
-  void setupPasswordCobtrollerListener() {
+  void setupPasswordControllerListener() {
     passwordController.addListener(() {
       setState(() {
         hasLowercase = AppRegex.hasLowercase(passwordController.text);
@@ -52,7 +52,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             hintText: "Email Address",
             suffixIcon: Icon(Icons.email_outlined),
             validator: (value) {
-              if (value == null || value.isEmpty) {
+              if (value == null || value.isEmpty || !AppRegex.isValidEmail(value)) {
                 return 'Please enter your email';
               }
             },
