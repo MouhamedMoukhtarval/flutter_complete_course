@@ -34,6 +34,7 @@ class LoginBlocListener extends StatelessWidget {
           },
         );
       },
+      child: const SizedBox.shrink(),
     );
   }
 
