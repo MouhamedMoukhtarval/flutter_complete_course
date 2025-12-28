@@ -1,9 +1,8 @@
 import 'package:app_serving_doctors/core/helpers/spacing.dart';
 import 'package:app_serving_doctors/core/theming/styles.dart';
 import 'package:app_serving_doctors/core/widgets/app_text_button.dart';
-import 'package:app_serving_doctors/features/login/data/models/login_request_body.dart';
 import 'package:app_serving_doctors/features/login/logic/cubit/login_cubit.dart';
-import 'package:app_serving_doctors/features/login/ui/widgets/already_have_account_text.dart';
+import 'package:app_serving_doctors/features/login/ui/widgets/dont_have_account.dart';
 import 'package:app_serving_doctors/features/login/ui/widgets/email_and_password.dart';
 import 'package:app_serving_doctors/features/login/ui/widgets/login_bloc_listener.dart';
 import 'package:app_serving_doctors/features/login/ui/widgets/terms_conditions_text.dart';
@@ -53,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                     spacingVertical(20),
                     const TermsConditionsText(),
                     spacingVertical(40),
-                    const AlreadyHaveAccountText(),
+                    const DontHaveAccount(),
                     const LoginBlocListener(),
                   ],
                 ),
@@ -67,12 +66,7 @@ class LoginScreen extends StatelessWidget {
 
   void validateAndLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLoadingStates(
-            LoginRequestBody(
-              email: context.read<LoginCubit>().emailController.text,
-              password: context.read<LoginCubit>().passwordController.text,
-            ),
-          );
-  }
+      context.read<LoginCubit>().emitLoadingStates();
+    }
   }
 }
