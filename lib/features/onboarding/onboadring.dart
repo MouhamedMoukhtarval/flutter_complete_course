@@ -31,7 +31,7 @@ class OnBoardingScreen extends StatelessWidget {
                     children: [
                       Text(
                         'Manage your work by the app and make your life easier and help people to get the best care.',
-                        style: AppStyles.fontGrayRegular,
+                        style: AppStyles.font13GrayRegular,
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(height: 30.h),

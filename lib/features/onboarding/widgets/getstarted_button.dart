@@ -1,4 +1,4 @@
-import 'package:app_serving_doctors/core/extensions/extensions.dart';
+import 'package:app_serving_doctors/core/helpers/extensions.dart';
 import 'package:app_serving_doctors/core/routes/routes.dart';
 import 'package:app_serving_doctors/core/theming/colors.dart';
 import 'package:app_serving_doctors/core/theming/styles.dart';
@@ -11,7 +11,7 @@ class GetStartedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        context.pushNamed(Routes.login);
+        context.pushNamed(Routes.loginScreen);
       },
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.resolveWith((state) {
@@ -27,7 +27,7 @@ class GetStartedButton extends StatelessWidget {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         ),
       ),
-      child: Text('Get Started', style: AppStyles.fontWhiteSemiBold),
+      child: Text('Get Started', style: AppStyles.font16WhiteMedium),
     );
   }
 }

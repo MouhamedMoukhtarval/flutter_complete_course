@@ -1,7 +1,7 @@
 name: app_serving_doctors
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.0
+version: 0.1.2+1
 
 environment:
   sdk: ^3.9.2
@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   # State Management
   flutter_bloc: ^9.1.1
+  # A build system for Dart code generation and modular compilation.
+  build_runner: ^2.10.4
   #Code Generation
   freezed: ^3.2.3
   # Annotations for the freezed code-generator. 
@@ -19,7 +21,7 @@ dependencies:
   # For Dependency Injection
   get_it: ^8.2.0
   # Automatically generate code for converting to and from JSON by annotating Dart classes.
-  json_serializable: ^6.11.1
+  json_serializable: ^6.11.2
   # Classes and helper functions that support JSON code generation
   # via the `json_serializable` package.
   json_annotation: ^4.9.0
@@ -40,6 +42,7 @@ dependencies:
   flutter_svg: ^2.0.18
   # for adapting the app to different screen sizes & font sizes
   flutter_screenutil: ^5.9.3
+  firebase_core: ^4.3.0
 
 dev_dependencies:
   flutter_test:
