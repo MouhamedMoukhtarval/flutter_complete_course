@@ -9,7 +9,7 @@ platform :android do
       app: "1:115258620902:android:93d861d06ed4c846bef427",
       firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
-      testers: "mouhamedsidiyas60@gmail.com",
+      testers: "mouhamedsidiya60@gmail.com",
       release_notes: "Android firebase app distribution lane release notes"
     )
   end
