@@ -6,7 +6,7 @@ platform :android do
     sh "flutter clean"
     sh "flutter build apk --release --flavor Production --target lib/main_production.dart --no-tree-shake-icons"
     firebase_app_distribution(
-      app: "1:115258620902:android:93d861d0e6d4c846bef427",
+      app: "1:115258620902:android:93d861d06ed4c846bef427",
       firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
       testers: "mouhamedsidiyas60@gmail.com",
