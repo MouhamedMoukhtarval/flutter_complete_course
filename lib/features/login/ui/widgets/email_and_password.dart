@@ -52,7 +52,9 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             hintText: "Email Address",
             suffixIcon: Icon(Icons.email_outlined),
             validator: (value) {
-              if (value == null || value.isEmpty || !AppRegex.isValidEmail(value)) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isValidEmail(value)) {
                 return 'Please enter your email';
               }
             },
@@ -91,6 +93,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
       ),
     );
   }
+
   @override
   void dispose() {
     passwordController.dispose();
