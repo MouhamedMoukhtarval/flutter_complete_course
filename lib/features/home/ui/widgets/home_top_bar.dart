@@ -1,7 +1,6 @@
 import 'package:app_serving_doctors/core/theming/colors.dart';
 import 'package:app_serving_doctors/core/theming/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeTopBar extends StatelessWidget {
@@ -26,7 +25,7 @@ class HomeTopBar extends StatelessWidget {
           radius: 24.0,
           backgroundColor: ColorsManager.moreLighterGray,
           child: SvgPicture.asset('assets/svgs/notification.svg'),
-        )
+        ),
       ],
     );
   }

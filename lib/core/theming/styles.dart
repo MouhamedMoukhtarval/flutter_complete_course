@@ -99,4 +99,16 @@ class AppStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.gray,
   );
+
+  static TextStyle font18WhiteMeduim = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.white,
+  );
+
+  static TextStyle font12BlueSemiBold = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.mainBlue,
+  );
 }
