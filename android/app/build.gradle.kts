@@ -41,7 +41,7 @@ android {
                 type = "string",
                 name = "app_name",
                 value = "Doctor")
-            applicationIdSuffix = ".dev"
+            //applicationIdSuffix = ".dev"
         }
         create("production") {
             dimension = "default"
