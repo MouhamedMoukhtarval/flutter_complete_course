@@ -5,6 +5,7 @@ class DioFactory {
   /// Private constructor to prevent instantiation.
   DioFactory._();
   static Dio? dio;
+
   /// Returns a new [Dio] instance with the specified base URL.
   static Dio getDio() {
     Duration timeout = const Duration(seconds: 30);
@@ -13,21 +14,29 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeout
         ..options.receiveTimeout = timeout;
+      addHeaders();
       addDioInterceptor();
       return dio!;
-    }else{
+    } else {
       return dio!;
     }
   }
-  static void addDioInterceptor(){
+
+  static void addHeaders() {
+    dio!.options.headers = {
+      'Accept': 'application/json',
+      'Authorization':
+          'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzY3NTYxNDMxLCJleHAiOjE3Njc2NDc4MzEsIm5iZiI6MTc2NzU2MTQzMSwianRpIjoiclhuZFRGOHZqcU5qZnhoZSIsInN1YiI6IjI4MCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.JUAjKFlNS41-LRTzl5eT-oWflzKFA1RYPnNnR5rQp3w',
+    };
+  }
+
+  static void addDioInterceptor() {
     dio!.interceptors.add(
       PrettyDioLogger(
         requestHeader: true,
         requestBody: true,
         responseBody: true,
-        ),
+      ),
     );
-
   }
-
 }

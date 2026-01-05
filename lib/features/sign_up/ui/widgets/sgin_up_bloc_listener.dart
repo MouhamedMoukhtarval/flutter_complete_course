@@ -35,7 +35,7 @@ class SignupBlocListener extends StatelessWidget {
           },
           signupError: (error) {
             setupErrorState(context, error);
-          }, signUpLoading: () {  },
+          }, signUpLoading: () {  }, 
         );
       },
       child: const SizedBox.shrink(),
