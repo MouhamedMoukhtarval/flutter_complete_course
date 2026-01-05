@@ -1,10 +1,9 @@
 import 'package:app_serving_doctors/core/helpers/spacing.dart';
 import 'package:app_serving_doctors/core/theming/colors.dart';
-import 'package:app_serving_doctors/features/home/ui/widgets/doctor_list_view.dart';
-import 'package:app_serving_doctors/features/home/ui/widgets/doctor_speciality_list_view.dart';
 import 'package:app_serving_doctors/features/home/ui/widgets/doctor_speciality_see_all.dart';
 import 'package:app_serving_doctors/features/home/ui/widgets/doctors_blue_container.dart';
 import 'package:app_serving_doctors/features/home/ui/widgets/home_top_bar.dart';
+import 'package:app_serving_doctors/features/home/ui/widgets/specializations_doctors_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,9 +24,8 @@ class HomeScreen extends StatelessWidget {
               DoctorsBlueContainer(),
               spacingVertical(20.0),
               DoctorSpecialitySeeAll(),
-              DoctorSpecialityListView(),
               spacingVertical(20.0),
-              DoctorListView(),
+              SpecializationsDoctorsBlocBuilder(),
             ],
           ),
         ),
