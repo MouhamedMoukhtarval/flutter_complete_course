@@ -4,14 +4,28 @@ extension NavigatorExtension on BuildContext {
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);
   }
-  Future<dynamic> pushNamedAndRemoveUntil(String routeName, {
-    Object? arguments, required RoutePredicate routePredicate}) {
-    return Navigator.of(this).pushNamedAndRemoveUntil(routeName, routePredicate, arguments: arguments);
+
+  Future<dynamic> pushNamedAndRemoveUntil(
+    String routeName, {
+    Object? arguments,
+    required RoutePredicate routePredicate,
+  }) {
+    return Navigator.of(
+      this,
+    ).pushNamedAndRemoveUntil(routeName, routePredicate, arguments: arguments);
   }
+
   Future<dynamic> pushReplacementNamed(String routeName, {Object? arguments}) {
-    return Navigator.of(this).pushReplacementNamed(routeName, arguments: arguments);
+    return Navigator.of(
+      this,
+    ).pushReplacementNamed(routeName, arguments: arguments);
   }
+
   Future<dynamic> pop() async {
     return Navigator.of(this).pop();
   }
+}
+
+extension StringExtension on String? {
+  bool isNullOrEmpty() => this == null || this == '';
 }
