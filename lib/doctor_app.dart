@@ -1,3 +1,4 @@
+import 'package:app_serving_doctors/core/helpers/constants_keys.dart';
 import 'package:app_serving_doctors/core/routes/app_router.dart';
 import 'package:app_serving_doctors/core/routes/routes.dart' show Routes;
 import 'package:app_serving_doctors/core/theming/colors.dart';
@@ -21,7 +22,7 @@ class DocotrApp extends StatelessWidget {
           primaryColor: ColorsManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
-        initialRoute: Routes.onBoarding,
+        initialRoute: isLoggedIn ? Routes.loginScreen : Routes.homeScreen,
         onGenerateRoute: appRouter.getRoute,
       ),
     );
