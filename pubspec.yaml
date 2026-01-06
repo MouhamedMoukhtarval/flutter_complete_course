@@ -19,7 +19,7 @@ dependencies:
   # This package does nothing without freezed too.
   freezed_annotation: ^3.1.0
   # For Dependency Injection
-  get_it: ^8.2.0
+  get_it: ^9.2.0
   # Automatically generate code for converting to and from JSON by annotating Dart classes.
   json_serializable: ^6.11.2
   # Classes and helper functions that support JSON code generation
@@ -43,11 +43,13 @@ dependencies:
   # for adapting the app to different screen sizes & font sizes
   flutter_screenutil: ^5.9.3
   firebase_core: ^4.3.0
+  shared_preferences: ^2.5.4
+  flutter_secure_storage: ^10.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true
