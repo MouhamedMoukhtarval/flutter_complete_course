@@ -29,3 +29,8 @@ extension NavigatorExtension on BuildContext {
 extension StringExtension on String? {
   bool isNullOrEmpty() => this == null || this == '';
 }
+/// Check if a list is null or empty
+extension ListExtension<T> on List<T>? {
+  bool isNullOrEmpty() => this == null || this!.isEmpty;
+}
+
