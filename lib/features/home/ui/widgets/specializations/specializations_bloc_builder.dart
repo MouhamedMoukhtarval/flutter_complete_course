@@ -1,15 +1,15 @@
 import 'package:app_serving_doctors/core/helpers/spacing.dart';
-import 'package:app_serving_doctors/core/theming/colors.dart';
+import 'package:app_serving_doctors/features/home/data/models/specialization_response_model.dart';
 import 'package:app_serving_doctors/features/home/logic/home_cubit.dart';
 import 'package:app_serving_doctors/features/home/logic/home_state.dart';
-import 'package:app_serving_doctors/features/home/ui/widgets/doctor_list_view.dart';
-import 'package:app_serving_doctors/features/home/ui/widgets/doctor_speciality_list_view.dart';
+import 'package:app_serving_doctors/features/home/ui/widgets/doctors/doctor_list_view.dart';
+import 'package:app_serving_doctors/features/home/ui/widgets/doctors/doctor_shimmer_loding.dart';
+import 'package:app_serving_doctors/features/home/ui/widgets/doctors/doctor_speciality_list_view.dart';
+import 'package:app_serving_doctors/features/home/ui/widgets/specializations/speciality_shimer_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-class SpecializationsDoctorsBlocBuilder extends StatelessWidget {
-  const SpecializationsDoctorsBlocBuilder({super.key});
+class SpecializationsBlocBuilder extends StatelessWidget {
+  const SpecializationsBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,12 @@ class SpecializationsDoctorsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           specializationLoading: () => setupLoading(),
-          specializationSuccess: (specializationResponseModel) {
-            var specializationsList =
-                specializationResponseModel.specializationsDataList;
+          specializationSuccess: (specializationsDataList) {
+            var specializationsList = specializationsDataList;
             return Expanded(
               child: Column(
                 children: [
-                  DoctorSpecialityListView(
+                  SpecialityListView(
                     specializationsList: specializationsList ?? [],
                   ),
                   spacingVertical(8),
@@ -49,26 +48,17 @@ class SpecializationsDoctorsBlocBuilder extends StatelessWidget {
     );
   }
 
-  Widget setupLoading() {
-    return SizedBox(
-      height: 100.h,
-      child: Center(
-        child: CircularProgressIndicator(color: ColorsManager.mainBlue),
-      ),
-    );
-  }
+  Widget setupLoading() => Expanded(
+    child: Column(
+      children: [
+        SpecialityShimerLoading(),
+        spacingVertical(8),
+        DoctorShimmerLoding(),
+      ],
+    ),
+  );
 
-  Widget setupSeccess(specializationsList) {
-    return Expanded(
-      child: Column(
-        children: [
-          DoctorSpecialityListView(
-            specializationsList: specializationsList ?? [],
-          ),
-          spacingVertical(8),
-          DoctorListView(doctorsList: specializationsList?.first?.doctorsList),
-        ],
-      ),
-    );
+  Widget setupSeccess(List<SpecializationsData?>? specializationsList) {
+    return SpecialityListView(specializationsList: specializationsList ?? []);
   }
 }
