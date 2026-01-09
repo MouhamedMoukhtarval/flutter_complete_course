@@ -3,6 +3,7 @@ import 'package:app_serving_doctors/features/home/logic/home_cubit.dart';
 import 'package:app_serving_doctors/features/home/ui/widgets/specializations/speciality_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SpecialityListView extends StatefulWidget {
   final List<SpecializationsData?> specializationsList;
@@ -17,11 +18,11 @@ class SpecialityListView extends StatefulWidget {
 }
 
 class _DoctorSpecialityListViewState extends State<SpecialityListView> {
+  var selectSpecializationIndex = 0;
   @override
   Widget build(BuildContext context) {
-    var selectSpecializationIndex = 0;
     return SizedBox(
-      height: 100,
+      height: 100.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.specializationsList.length,

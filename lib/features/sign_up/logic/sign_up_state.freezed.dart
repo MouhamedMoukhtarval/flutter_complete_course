@@ -128,13 +128,13 @@ return sginupError(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  sginupLoading,TResult Function( T data)?  sginupSuccess,TResult Function( String errorMessage)?  sginupError,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  sginupLoading,TResult Function( T data)?  sginupSuccess,TResult Function( ApiErrorsModel apiErrorsModel)?  sginupError,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case SignupLoading() when sginupLoading != null:
 return sginupLoading();case SignupSuccess() when sginupSuccess != null:
 return sginupSuccess(_that.data);case SginupError() when sginupError != null:
-return sginupError(_that.errorMessage);case _:
+return sginupError(_that.apiErrorsModel);case _:
   return orElse();
 
 }
@@ -152,13 +152,13 @@ return sginupError(_that.errorMessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  sginupLoading,required TResult Function( T data)  sginupSuccess,required TResult Function( String errorMessage)  sginupError,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  sginupLoading,required TResult Function( T data)  sginupSuccess,required TResult Function( ApiErrorsModel apiErrorsModel)  sginupError,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case SignupLoading():
 return sginupLoading();case SignupSuccess():
 return sginupSuccess(_that.data);case SginupError():
-return sginupError(_that.errorMessage);case _:
+return sginupError(_that.apiErrorsModel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -175,13 +175,13 @@ return sginupError(_that.errorMessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  sginupLoading,TResult? Function( T data)?  sginupSuccess,TResult? Function( String errorMessage)?  sginupError, required Null Function() signUpLoading, required Null Function() signupLoading, required Null Function(dynamic signupResponse) signupSuccess, required Null Function(dynamic error) signupError,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  sginupLoading,TResult? Function( T data)?  sginupSuccess,TResult? Function( ApiErrorsModel apiErrorsModel)?  sginupError, required Null Function() signUpLoading, required Null Function() signupLoading, required Null Function(dynamic signupResponse) signupSuccess, required Null Function(dynamic error) signupError,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case SignupLoading() when sginupLoading != null:
 return sginupLoading();case SignupSuccess() when sginupSuccess != null:
 return sginupSuccess(_that.data);case SginupError() when sginupError != null:
-return sginupError(_that.errorMessage);case _:
+return sginupError(_that.apiErrorsModel);case _:
   return null;
 
 }
@@ -323,10 +323,10 @@ as T,
 
 
 class SginupError<T> implements SignUpState<T> {
-  const SginupError({required this.errorMessage});
+  const SginupError(this.apiErrorsModel);
   
 
- final  String errorMessage;
+ final  ApiErrorsModel apiErrorsModel;
 
 /// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
@@ -338,16 +338,16 @@ $SginupErrorCopyWith<T, SginupError<T>> get copyWith => _$SginupErrorCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SginupError<T>&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SginupError<T>&&(identical(other.apiErrorsModel, apiErrorsModel) || other.apiErrorsModel == apiErrorsModel));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,errorMessage);
+int get hashCode => Object.hash(runtimeType,apiErrorsModel);
 
 @override
 String toString() {
-  return 'SignUpState<$T>.sginupError(errorMessage: $errorMessage)';
+  return 'SignUpState<$T>.sginupError(apiErrorsModel: $apiErrorsModel)';
 }
 
 
@@ -358,7 +358,7 @@ abstract mixin class $SginupErrorCopyWith<T,$Res> implements $SignUpStateCopyWit
   factory $SginupErrorCopyWith(SginupError<T> value, $Res Function(SginupError<T>) _then) = _$SginupErrorCopyWithImpl;
 @useResult
 $Res call({
- String errorMessage
+ ApiErrorsModel apiErrorsModel
 });
 
 
@@ -375,10 +375,10 @@ class _$SginupErrorCopyWithImpl<T,$Res>
 
 /// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? errorMessage = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorsModel = null,}) {
   return _then(SginupError<T>(
-errorMessage: null == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
-as String,
+null == apiErrorsModel ? _self.apiErrorsModel : apiErrorsModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorsModel,
   ));
 }
 
