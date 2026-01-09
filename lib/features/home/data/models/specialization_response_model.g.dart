@@ -18,6 +18,7 @@ SpecializationResponseModel _$SpecializationResponseModelFromJson(
       .toList(),
 );
 
+// ignore: unused_element
 Map<String, dynamic> _$SpecializationResponseModelToJson(
   SpecializationResponseModel instance,
 ) => <String, dynamic>{'data': instance.specializationsDataList};
@@ -34,6 +35,7 @@ SpecializationsData _$SpecializationsDataFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
+// ignore: unused_element
 Map<String, dynamic> _$SpecializationsDataToJson(
   SpecializationsData instance,
 ) => <String, dynamic>{
@@ -53,6 +55,7 @@ Doctors _$DoctorsFromJson(Map<String, dynamic> json) => Doctors(
   degree: json['degree'] as String?,
 );
 
+// ignore: unused_element
 Map<String, dynamic> _$DoctorsToJson(Doctors instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,

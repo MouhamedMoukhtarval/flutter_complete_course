@@ -1,4 +1,5 @@
 import 'package:app_serving_doctors/core/helpers/extensions.dart';
+import 'package:app_serving_doctors/core/networking/api_errors_model.dart';
 import 'package:app_serving_doctors/core/routes/routes.dart';
 import 'package:app_serving_doctors/core/theming/colors.dart';
 import 'package:app_serving_doctors/core/theming/styles.dart';
@@ -14,10 +15,10 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Success || current is Error || current is Loading,
+          current is LoginSuccess || current is LoginError || current is LoginLoading,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () {
+          loginLoading: () {
             showDialog(
               context: context,
               builder: (context) => const Center(
@@ -25,11 +26,11 @@ class LoginBlocListener extends StatelessWidget {
               ),
             );
           },
-          success: (loginResponse) {
+          loginSuccess: (loginResponse) {
             context.pop();
             context.pushNamed(Routes.homeScreen);
           },
-          error: (errorMessage) {
+          loginError: (errorMessage) {
             setupErrorState(context, errorMessage);
           },
         );
@@ -38,13 +39,13 @@ class LoginBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String errorMessage) {
+  void setupErrorState(BuildContext context, ApiErrorsModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         icon: const Icon(Icons.error, color: ColorsManager.red, size: 32),
-        content: Text(errorMessage, style: AppStyles.font15DarkBlueMedium),
+        content: Text(apiErrorModel.getAllErrorsMessages(), style: AppStyles.font15DarkBlueMedium),
         actions: [
           TextButton(
             onPressed: () => context.pop(),

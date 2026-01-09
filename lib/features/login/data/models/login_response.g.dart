@@ -16,6 +16,7 @@ LoginResponseBody _$LoginResponseBodyFromJson(Map<String, dynamic> json) =>
       code: (json['code'] as num?)?.toInt(),
     );
 
+// ignore: unused_element
 Map<String, dynamic> _$LoginResponseBodyToJson(LoginResponseBody instance) =>
     <String, dynamic>{
       'messsage': instance.messsage,
@@ -29,6 +30,7 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) => UserData(
   userName: json['username'] as String?,
 );
 
+// ignore: unused_element
 Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
   'token': instance.token,
   'username': instance.userName,

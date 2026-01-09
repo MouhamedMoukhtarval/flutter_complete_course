@@ -21,7 +21,7 @@ class SpecialityListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.only(start: itemIndex == 0 ? 0 : 16.0),
+      padding: EdgeInsetsDirectional.only(start: itemIndex == 0 ? 0 : 24.w),
       child: Column(
         children: [
           itemIndex == selectedIndex
@@ -52,8 +52,9 @@ class SpecialityListViewItem extends StatelessWidget {
           spacingVertical(8),
           Text(
             specializationsData?.name ?? 'Specialization',
-            style: itemIndex == selectedIndex ? 
-                  AppStyles.font14DarkBlueBold : AppStyles.font12GrayRegular,
+            style: itemIndex == selectedIndex
+                ? AppStyles.font14DarkBlueBold
+                : AppStyles.font12GrayRegular,
           ),
         ],
       ),

@@ -1,9 +1,9 @@
-import 'package:app_serving_doctors/core/networking/api_errors_handler.dart';
+import 'package:app_serving_doctors/core/networking/api_errors_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'api_result.freezed.dart';
 
 @Freezed()
 abstract class ApiResult<T> with _$ApiResult<T> {
   const factory ApiResult.success(T data) = Success<T>;
-  const factory ApiResult.failure(ErrorHandler apiErrorsHandler) = Failure<T>;
+  const factory ApiResult.failure(ApiErrorsModel apiErrorsHandler) = Failure<T>;
 }

@@ -35,7 +35,7 @@ class PasswordValidations extends StatelessWidget {
     ]);
   }
   
-  buildValidation(String text, bool hasValidated) {
+  Row buildValidation(String text, bool hasValidated) {
     return Row(
       children: [
         const CircleAvatar(

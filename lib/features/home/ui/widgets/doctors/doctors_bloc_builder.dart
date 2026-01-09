@@ -16,7 +16,7 @@ class DoctorsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           doctorsSuccess: (doctorList) => setupSeccess(doctorList),
-          doctorsError: (errorHandler) => setupError(),
+          doctorsError: () => setupError(),
           orElse: () => const SizedBox.shrink(),
         );
       },
